@@ -18,6 +18,12 @@ def home():
         if category and all(items):
             submissions.append({"category": category, "five": items})
         return redirect("/")
+    elif: 
+        if request.method == "GET":
+            category = request.form.get("category", "").strip()
+            return [category]
+            
+            
     return render_template("index.html", submissions=submissions)
 
 if __name__ == "__main__":
